@@ -1,0 +1,25 @@
+{
+  "entities": {
+    "Record": {
+      "title": "Patient Record",
+      "description": "A heart disease risk assessment record for a patient.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "age": { "type": "number" },
+        "riskScore": { "type": "number" },
+        "data": { "type": "object" },
+        "insights": { "type": "object" },
+        "timestamp": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "age", "riskScore", "data", "timestamp"]
+    }
+  },
+  "firestore": {
+    "/records/{recordId}": {
+      "schema": "Record",
+      "description": "Collection of patient risk assessments."
+    }
+  }
+}

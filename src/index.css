@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital,wght@0,400;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-surface: #F5F2ED;
+  --color-surface-dim: #EAE7E0;
+  --color-surface-bright: #F5F2ED;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #F5F2ED;
+  --color-surface-container: #EAE7E0;
+  --color-surface-container-high: #E2DFD8;
+  --color-surface-container-highest: #D9D6CF;
+  
+  --color-on-surface: #1A1A1A;
+  --color-on-surface-variant: rgba(26, 26, 26, 0.7);
+  --color-inverse-surface: #1A1A1A;
+  --color-inverse-on-surface: #F5F2ED;
+  --color-outline: rgba(26, 26, 26, 0.3);
+  --color-outline-variant: rgba(26, 26, 26, 0.1);
+  --color-surface-tint: #1A1A1A;
+  
+  --color-primary-clinical: #1A1A1A;
+  --color-on-primary-clinical: #F5F2ED;
+  --color-primary-container-clinical: #8B4513;
+  
+  --color-status-critical: #ba1a1a;
+  --color-status-success: #2d5a27;
+  --color-status-warning: #8B4513;
+
+  --font-hanken: "Hanken Grotesk", sans-serif;
+  --font-serif: "Instrument Serif", serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --radius-medical-sm: 0px;
+  --radius-medical: 0px;
+  --radius-medical-lg: 0px;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-on-surface font-hanken antialiased;
+  }
+}
+
+@layer utilities {
+  .headline-xl {
+    @apply font-serif text-[80px] font-light leading-[0.9] -tracking-[0.02em];
+  }
+  .headline-lg {
+    @apply font-serif italic text-[48px] font-normal leading-[1.1] text-[#8B4513];
+  }
+  .headline-md {
+    @apply font-serif text-[32px] font-normal leading-[1.2];
+  }
+  .body-lg {
+    @apply font-hanken text-[18px] font-normal leading-[28px] opacity-90;
+  }
+  .body-md {
+    @apply font-hanken text-[16px] font-normal leading-[24px] opacity-80;
+  }
+  .data-mono {
+    @apply font-mono text-[14px] font-medium leading-[20px] tracking-tight;
+  }
+  .label-caps {
+    @apply font-hanken text-[10px] font-bold leading-[16px] tracking-[0.2em] uppercase text-outline;
+  }
+}

@@ -1,0 +1,13 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Explicitly allow records collection
+    match /records/{recordId} {
+      allow read, write: if true;
+    }
+    // Allow everything else for now to debug
+    match /{document=**} {
+      allow read, write: if true;
+    }
+  }
+}
